@@ -8,8 +8,24 @@
 		select * from st_product where pno=#{pno}
 	</select>
 	
+	<select id="countProduct" resultType="int">
+		SELECT COUNT(*) FROM st_product 
+	</select>
+	
 	<select id="getProductList" resultMap="productList">
-		select * from st_product
+		SELECT
+			*
+		FROM (
+			SELECT 
+				ROWNUM RN, A.*
+			FROM (
+				SELECT
+					*
+				FROM st_product
+				ORDER BY pno DESC
+			) A
+		)
+		WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 
 	<resultMap type="product" id="productList">

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.project.product.dao.ProductDAO;
 import com.spring.project.product.service.ProductService;
+import com.spring.project.product.vo.PagingVO;
 import com.spring.project.product.vo.ProductVO;
 
 @Service("productService")
@@ -23,5 +24,15 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductVO getProduct(ProductVO vo) {
 		return productDAO.getProduct(vo);
+	}
+
+	@Override
+	public int countBoard() {
+		return productDAO.countProduct();
+	}
+
+	@Override
+	public List<ProductVO> selectProduct(PagingVO vo) {
+		return productDAO.selectProduct(vo);
 	}
 }

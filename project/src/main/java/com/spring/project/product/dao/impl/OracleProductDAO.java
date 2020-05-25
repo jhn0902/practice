@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.spring.project.product.dao.ProductDAO;
+import com.spring.project.product.vo.PagingVO;
 import com.spring.project.product.vo.ProductVO;
 
 @Repository
@@ -38,6 +39,16 @@ public class OracleProductDAO implements ProductDAO {
 	@Override
 	public List<ProductVO> getProductList(ProductVO vo) {
 		return sqlSessionTemplate.selectList("ProductDAO.getProductList", vo);
+	}
+
+	@Override
+	public List<ProductVO> selectProduct(PagingVO vo) {
+		return sqlSessionTemplate.selectList("ProductDAO.getProductList", vo);
+	}
+
+	@Override
+	public int countProduct() {
+		return sqlSessionTemplate.selectOne("ProductDAO.countProduct");
 	}
 
 }
