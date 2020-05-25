@@ -15,4 +15,6 @@ public interface ProductService {
 	
 	public ProductVO getProduct(ProductVO vo);
 	
+	public void insertProduct(ProductVO vo);
+	
 }

@@ -2,11 +2,11 @@ package com.spring.project.product.vo;
 
 public class ProductVO {
 	
-	private int pno;
+	private Integer pno;
 	private String pName;
 	private String image_file_url;
-	private int price;
-	private int discount;
+	private Integer price;
+	private Integer discount;
 	private String pCompany;
 	private String pDate;
 	private String screen_size;	
@@ -16,7 +16,7 @@ public class ProductVO {
 	private String terminals;
 	private String power_consumption;
 	private String weight;
-	private char exp;
+	private Character exp;
 	
 	public String getScreen_size() {
 		return screen_size;
@@ -25,10 +25,10 @@ public class ProductVO {
 		this.screen_size = screen_size;
 	}
 	
-	public int getPno() {
+	public Integer getPno() {
 		return pno;
 	}
-	public void setPno(int pno) {
+	public void setPno(Integer pno) {
 		this.pno = pno;
 	}
 	public String getpName() {
@@ -43,16 +43,16 @@ public class ProductVO {
 	public void setImage_file_url(String image_file_url) {
 		this.image_file_url = image_file_url;
 	}
-	public int getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	public int getDiscount() {
+	public Integer getDiscount() {
 		return discount;
 	}
-	public void setDiscount(int discount) {
+	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
 	public String getpCompany() {
@@ -103,10 +103,10 @@ public class ProductVO {
 	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-	public char getExp() {
+	public Character getExp() {
 		return exp;
 	}
-	public void setExp(char exp) {
+	public void setExp(Character exp) {
 		this.exp = exp;
 	}
 	@Override

@@ -35,4 +35,9 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductVO> selectProduct(PagingVO vo) {
 		return productDAO.selectProduct(vo);
 	}
+
+	@Override
+	public void insertProduct(ProductVO vo) {
+		productDAO.insertProduct(vo);
+	}
 }

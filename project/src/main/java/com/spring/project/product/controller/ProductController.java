@@ -1,7 +1,5 @@
 package com.spring.project.product.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,4 +44,29 @@ public class ProductController {
 		mav.setViewName("productList");
 		return mav;
 	}
+	
+	@RequestMapping("/insertProduct.do")
+	public ModelAndView InsertProduct(ProductVO vo, ModelAndView mav) {
+		System.out.println("InsertProduct 호출");
+		productService.insertProduct(vo);
+		System.out.println(vo.toString());
+		mav.setViewName("redirect:productList.do");
+		return mav;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

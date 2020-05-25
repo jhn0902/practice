@@ -18,7 +18,8 @@ public class OracleProductDAO implements ProductDAO {
 	
 	@Override
 	public void insertProduct(ProductVO vo) {
-
+		System.out.println("sqltemplate insertboard 호출");
+		sqlSessionTemplate.insert("ProductDAO.insertProduct", vo);
 	}
 
 	@Override
