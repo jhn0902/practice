@@ -1,0 +1,35 @@
+
+.clearfix {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.main_info {
+	border-top: 1px solid #e6e6e6;
+	padding: 15px 0;
+	height: 190px;
+	display: flex;
+}
+
+.thumb_image img {
+	width: 130px;
+	height: 130px;
+	padding: 10px;
+	box-sizing: content-box;
+}
+
+.main_info .prod-info {
+	padding: 15px 20px;
+	height: 160px;
+	min-width: 555px;
+	flex: 1;
+}
+
+.main_info .prod-price {
+	height: 160px;
+	width: 260px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
