@@ -29,6 +29,11 @@
     background: #55a532 linear-gradient(#91dd70, #55ae2e); 
 }
 
+/* Vendor Prefix(브라우저 업체별 접두사) */
+.input--text::-webkit-input-placeholder {color: #cacaca;}
+.input--text::-ms-input-placeholder {color: #cacaca;}
+.input--text::-moz-input-placeholder {color: #cacaca;}
+
 
 .clearfix {
 	content: "";
@@ -53,7 +58,7 @@
 .main_info .prod-info {
 	padding: 15px 20px;
 	height: 160px;
-	min-width: 555px;
+	min-width: 500px;
 	flex: 1;
 }
 
@@ -63,12 +68,28 @@
 	font-weight: 500;
 }
 
+.main_info .prod-info .spec-list > p{
+	color: #666;
+	font-size: 13px;
+}
+
 .main_info .prod-price {
 	color: #0275e0;
 	font-size: 16px;
 	font-weight: 500;
 	height: 160px;
-	width: 260px;
+	width: 200px;
+	min-width: 90px;
+	max-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#prod-update {
+	display: block;
+	height: 160px;
+	min-width: 160px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

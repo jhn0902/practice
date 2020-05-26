@@ -24,12 +24,12 @@ public class OracleProductDAO implements ProductDAO {
 
 	@Override
 	public void updateProduct(ProductVO vo) {
-
+		sqlSessionTemplate.update("ProductDAO.updateProduct", vo);
 	}
 
 	@Override
 	public void deleteProduct(ProductVO vo) {
-
+		sqlSessionTemplate.delete("ProductDAO.deleteProduct", vo);
 	}
 
 	@Override

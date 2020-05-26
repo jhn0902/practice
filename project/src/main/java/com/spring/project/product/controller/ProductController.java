@@ -24,6 +24,14 @@ public class ProductController {
 		return mav;
 	}
 	
+	@RequestMapping("/getProduct.do")
+	public ModelAndView GetProduct(ProductVO vo, ModelAndView mav) {
+		System.out.println("getProduct 호출");
+		mav.addObject("product", productService.getProduct(vo));
+		mav.setViewName("updateProduct");
+		return mav;
+	}
+	
 	@RequestMapping("/productList.do")
 	public ModelAndView ProductList(PagingVO vo, ModelAndView mav
 			, @RequestParam(value = "nowPage", required = false)String nowPage
@@ -49,11 +57,43 @@ public class ProductController {
 	public ModelAndView InsertProduct(ProductVO vo, ModelAndView mav) {
 		System.out.println("InsertProduct 호출");
 		productService.insertProduct(vo);
-		System.out.println(vo.toString());
+		mav.setViewName("redirect:productList.do");
+		return mav;
+	}
+	
+	@RequestMapping("/updateProduct.do")
+	public ModelAndView UpdateProduct(ProductVO vo, ModelAndView mav) {
+		productService.updateProduct(vo);
+		mav.setViewName("redirect:productList.do");
+		return mav;
+	}
+	
+	@RequestMapping("/deleteProduct.do")
+	public ModelAndView DeleteProduct(ProductVO vo, ModelAndView mav) {
+		productService.deleteProduct(vo);
 		mav.setViewName("redirect:productList.do");
 		return mav;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

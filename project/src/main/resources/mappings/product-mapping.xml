@@ -20,6 +20,18 @@
 		)
 	</insert>
 	
+	<update id="updateProduct" parameterType="st_product">
+		UPDATE st_product
+		SET pName=#{pName}, image_file_url=#{image_file_url}, price=#{price}, discount=#{discount}, pCompany=#{pCompany},
+			pDate=#{pDate} , screen_size=#{screen_size}, screen_ratio=#{screen_ratio}, resolution=#{resolution},
+			refresh_rate=#{refresh_rate}, terminals=#{terminals}, power_consumption=#{power_consumption}, weight=#{weight}, exp=#{exp}
+		WHERE pno=#{pno}
+	</update>
+	
+	<delete id="deleteProduct" parameterType="st_product">
+		DELETE FROM st_product where pno=#{pno}
+	</delete>
+	
 	<select id="getProduct" resultType="st_product">
 		select * from st_product where pno=#{pno}
 	</select>
